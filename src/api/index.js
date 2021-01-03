@@ -56,3 +56,24 @@ export const reqAddOrUpdataCart = (skuId, skuNum) => {
     method: 'post'
   })
 }
+//todo 购物车订单详情
+export const reqShopCar = () => {
+  return ajax({
+    url: '/cart/cartList',
+    method: 'get'
+  })
+}
+//todo 更新购物车的选中情况
+export const requpdataCartChecked = (skuId, isChecked) => {
+  return ajax({
+    url: `/cart/checkCart/${skuId}/${isChecked}`,
+    method: 'get'
+  })
+}
+//todo 删除一个
+export const reqDeleteCart = (skuId) => {
+  return ajax({
+    url: `/cart/deleteCart/${skuId}`,
+    method: 'delete'
+  })
+}

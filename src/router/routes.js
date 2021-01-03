@@ -7,6 +7,7 @@ import Register from '../pages/Register'
 import Login from '@/pages/Login'
 import Detail from '@/pages/Deatail'
 import addOrUpdataCarts from '@/pages/AddOruPudataCarts'
+import ShopCar from '@/pages/ShopCar'
 
 export default [
   {
@@ -43,5 +44,9 @@ export default [
   {
     path: '/addOrUpdataCarts',
     component: addOrUpdataCarts
+  },
+  {
+    path: '/shopcar',
+    component:ShopCar
   }
 ]

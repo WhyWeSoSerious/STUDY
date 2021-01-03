@@ -5,10 +5,10 @@ import home from './home'
 import user from './user'
 import search from './search'
 import detail from './detail'
-import addOrUpdataCarts from './addOrUpdataCart'
+import ShopCar from './ShopCar'
 
 export default {
   home,
   user,
-  search, detail, addOrUpdataCarts
+  search, detail, ShopCar
 }
