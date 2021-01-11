@@ -65,7 +65,7 @@
           <i class="summoney">{{allMoney}}</i>
         </div>
         <div class="sumbtn">
-          <a class="sum-btn" href="###" target="_blank">结算</a>
+          <router-link to="/trade" class="sum-btn" >结算</router-link>
         </div>
       </div>
     </div>
@@ -175,7 +175,7 @@ export default {
            const result = await this.$store.dispatch('updataAllChecked',val?1:0);
              this.getCartList()
         } catch (error) {
-         alert(error.message)
+         alert(error.message )
         }
       }
     }

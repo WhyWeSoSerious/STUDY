@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import TypeNav from "./components/TypeNav"
 import Pagination from "./components/Pagination"
+import * as API from '@/api'
 
 import './plugins/swiper' // 加载swiper的配置
 import './mock/mockServer'
@@ -21,7 +22,8 @@ Vue.component(Pagination.name, Pagination)
 new Vue({
   beforeCreate () {
     // 1) 创建或指定事件总线对象, 保存到Vue的原型上
-    Vue.prototype.$bus = this
+    Vue.prototype.$bus = this,
+      Vue.prototype.$API = API
   },
 
   render: h => h(App),

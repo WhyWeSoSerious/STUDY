@@ -32,7 +32,11 @@ service.interceptors.request.use((config) => {
     //todo 请求头添加临时id
     config.headers.userTempId = userTempId
   }
-  
+  //todo携带token
+  let token = store.state.user.token
+  if (token) {
+    config.headers.token = token
+  }
 
 
   // 必须返回config

@@ -1,6 +1,7 @@
 /* 
 路由器对象
 */
+import store from '@/store'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
@@ -47,7 +48,7 @@ VueRouter.prototype.replace = function (location, onResolve, onReject) {
 
 
 // 向外暴露路由器对象
-export default new VueRouter({
+const router =  new VueRouter({
   // 模式
   mode: 'history', // 不带#
   // 应用中的所有路由
@@ -56,3 +57,32 @@ export default new VueRouter({
      return { x: 0, y: 0 }
   }
 })
+//todo token的逻辑验证
+router.beforeEach(async(to, from, next) => {
+  let token = store.state.user.token;
+  if (token) {
+    if (to.path === '/login') {
+      next('/')
+    } else {
+      let hasUserInfo = !!store.state.user.userInfo.nickName;
+      if (hasUserInfo) {
+        next()//?直接放行
+      } else {
+        try {
+          await store.dispatch('getUserInfo');
+          next()
+          
+        } catch (error) {
+          alert('用户的token过期了');
+          store.dispatch('resetUserInfo');
+          next('/login?redirect='+to.path)
+        }
+      }
+    }
+  } else {
+    next()
+  }
+  
+})
+
+export default router

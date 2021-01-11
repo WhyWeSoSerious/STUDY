@@ -149,7 +149,6 @@ export default {
     // showSubList: _.throttle( (index) => { // 不可以, 原因在于箭头函数没有自己的this, 且不能通过bind来指定特定this
     // showSubList: _.throttle(function (index) { // 这个事件监听回调函数调用的频率太高
     showSubList: throttle(function (index) { // 这个事件监听回调函数调用的频率太高
-      console.log('throttle', index)
       // 只有当还没有离开整个分类的div时才更新下标
       if (this.currentIndex!==-2) {
         this.currentIndex = index;

@@ -8,6 +8,8 @@ import Login from '@/pages/Login'
 import Detail from '@/pages/Deatail'
 import addOrUpdataCarts from '@/pages/AddOruPudataCarts'
 import ShopCar from '@/pages/ShopCar'
+import Trade from '@/pages/Trade'
+import  pay from '@/pages/Pay'
 
 export default [
   {
@@ -48,5 +50,13 @@ export default [
   {
     path: '/shopcar',
     component:ShopCar
+  },
+  {
+    path: '/trade',
+    component:Trade
+  },
+  {
+    path: '/pay',
+    component:pay
   }
 ]

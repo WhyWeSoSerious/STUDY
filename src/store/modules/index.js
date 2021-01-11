@@ -6,9 +6,9 @@ import user from './user'
 import search from './search'
 import detail from './detail'
 import ShopCar from './ShopCar'
-
+import trade from './trade'
 export default {
   home,
   user,
-  search, detail, ShopCar
+  search, detail, ShopCar, trade
 }
